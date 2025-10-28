@@ -24,7 +24,7 @@ function SelectFormItem({
     <Col span={col}>
       <Form.Item
         name={name}
-        label={label}
+        label={label} 
         rules={!!message ? [{ required: true, message }] : []}
       >
         <Select

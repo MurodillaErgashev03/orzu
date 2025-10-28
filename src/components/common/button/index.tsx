@@ -1,22 +1,31 @@
-import { Button, ButtonProps, ConfigProvider } from 'antd';
-import { MarginTypes, colors } from 'src/constants/theme';
+import { Button, ButtonProps, ConfigProvider } from "antd";
+import { colors, MarginTypes } from "src/constants/theme";
+import styles from "./button.module.scss";
+import { useTypedSelector } from "src/app/store";
 
 type CombinedProps = ButtonProps & MarginTypes;
 
-interface Props extends CombinedProps {
+interface Props extends Omit<CombinedProps, "type"> {
   bg?: string;
-  width?: React.CSSProperties['width'];
+  width?: React.CSSProperties["width"];
   height?: number;
-  borderColor?: React.CSSProperties['borderColor'];
-  textColor?: React.CSSProperties['color'];
+  borderColor?: React.CSSProperties["borderColor"];
+  textColor?: React.CSSProperties["color"];
+  borderRadius?: React.CSSProperties["borderRadius"];
+  type?: "primary" | "default" | "dashed" | "text" | "link" | "delete";
+  backgroundColor?: string;
+  customName?: "primary" | "default" | "delete";
 }
-
 export default function CustomButton({
+  type,
+  // backgroundColor,
+  // customName,
   bg,
   width,
-  height = 46,
-  borderColor = colors.gray3,
-  textColor = colors.primary,
+  height = 54,
+  borderColor,
+  textColor,
+  borderRadius = 25,
   m,
   mt,
   mb,
@@ -25,31 +34,73 @@ export default function CustomButton({
   style,
   ...rest
 }: Props) {
+  // const colors = useTypedSelector((state) => state.layout.colors);
+
+  // const giveColors = () => {
+  //   if (customName === "primary") {
+  //     return {
+  //       textColor: "white",
+  //       borderColor: colors.black,
+  //       backgroundColor: colors.primary,
+  //     };
+  //     // } else if (customName === 'default') {
+  //     //   return {
+  //     //     backgroundColor: colors.background,
+  //     //     textColor: colors.colorText,
+  //     //     borderColor: colors.colorText,
+  //     //   };
+  //     // } else if (customName === 'delete') {
+  //     //   return {
+  //     //     backgroundColor: colors.colorDelete,
+  //     //     textColor: colors.colorError,
+  //     //     borderColor: 'transparent',
+  //     //   };
+  //     // } else {
+  //     //   return {
+  //     //     backgroundColor: 'transparent',
+  //     //     textColor: colors.colorText,
+  //     //     borderColor: 'transparent',
+  //     //   };
+  //   }
+  // };
+  // const {
+  //   backgroundColor: background,
+  //   textColor: colortext,
+  //   borderColor: bordertext,
+  // } = giveColors();
+
   return (
     <ConfigProvider
-      theme={{
-        token: {
-          colorBgBase: bg,
-          colorBorder: borderColor,
-        },
-        components: {
-          Button: {
-            controlHeight: height,
-            paddingContentHorizontal: 30,
-            colorText: textColor,
-          },
-        },
-      }}
+    // theme={{
+    //   token: {
+    //     colorBgBase: customName ? background : backgroundColor,
+    //     colorBorder: customName ? bordertext : borderColor,
+    //   },
+    //   components: {
+    //     Button: {
+    //       controlHeight: height,
+    //       paddingContentHorizontal: 30,
+    //       colorText: customName ? colortext : textColor,
+    //     },
+    //   },
+    // }}
     >
-      <Button
+      <button
+        className={styles.button}
         {...rest}
         style={{
+          color: textColor,
           width,
+          borderRadius,
           margin: m,
           marginTop: mt,
           marginBottom: mb,
           marginLeft: ml,
           marginRight: mr,
+          boxShadow: "none",
+          backgroundColor: bg,
+          border: `2px solid ${borderColor}`,
+
           ...style,
         }}
       />

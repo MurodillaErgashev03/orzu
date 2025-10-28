@@ -1,18 +1,20 @@
-import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import auth from 'src/app/slices/authSlice';
-import product from 'src/app/slices/productSlice';
-import { api } from './services/api';
-import { rtkQueryErrorLogger } from './services/api/middlewares';
+import { configureStore, ConfigureStoreOptions } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import auth from "src/app/slices/authSlice";
+import product from "src/app/slices/productSlice";
+import { api } from "./services/api";
+import { rtkQueryErrorLogger } from "./services/api/middlewares";
+import layout from "src/app/slices/layoutSlice";
 
 export const createStore = (
-  options?: ConfigureStoreOptions['preloadedState'] | undefined
+  options?: ConfigureStoreOptions["preloadedState"] | undefined
 ) =>
   configureStore({
     reducer: {
       [api.reducerPath]: api.reducer,
       auth,
       product,
+      layout,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(api.middleware, rtkQueryErrorLogger),

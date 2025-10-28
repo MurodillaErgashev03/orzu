@@ -1,6 +1,6 @@
-import { ConfigProvider } from 'antd';
-import { PropsWithChildren } from 'react';
-import { colors } from 'src/constants/theme';
+import { ConfigProvider } from "antd";
+import { PropsWithChildren } from "react";
+import { colors } from "src/constants/theme";
 
 function AntdProvider({ children }: PropsWithChildren) {
   return (
@@ -13,7 +13,7 @@ function AntdProvider({ children }: PropsWithChildren) {
           colorText: colors.gray6,
           colorTextPlaceholder: colors.gray4,
           fontSize: 16,
-          fontFamily: 'Inter',
+          fontFamily: "Inter",
         },
         components: {
           Input: {
@@ -29,10 +29,10 @@ function AntdProvider({ children }: PropsWithChildren) {
             paddingInline: 18,
           },
           Select: {
-            borderRadius: 12,
-            controlHeight: 44,
-            fontSize: 15,
-            optionPadding: '12px 18px',
+            //   borderRadius: 12,
+            //   controlHeight: 44,
+            //   fontSize: 15,
+            optionPadding: "8px 10px",
           },
           Form: {
             labelFontSize: 14,

@@ -1,0 +1,38 @@
+@import "src/styles/variables.scss";
+
+.header {
+  padding: 20px 0 10px 0;
+  background: inherit;
+  .content {
+    @include flex($justify: space-between, $align: center);
+
+    .leftBlock {
+      @include flex($align: center);
+
+      gap: 8px;
+      :global {
+        .ant-select {
+          border: none !important;
+          border-radius: 25px;
+          background-color: #f5f5f5;
+          height: auto;
+
+          &-selector {
+            border: none !important;
+            padding: 20px;
+            height: 54px !important;
+            border-radius: 25px;
+            box-shadow: none !important;
+          }
+          &-arrow {
+            display: none;
+          }
+          &-selection-item {
+            padding-right: 0;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

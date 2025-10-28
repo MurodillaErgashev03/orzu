@@ -1,13 +1,16 @@
 @import './variables.scss';
 @import './help.scss';
 
+
+
+
 *,
 :after,
 :before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-primary !important;
+  font-family: $font-primary;
 }
 
 html,
@@ -36,9 +39,9 @@ a {
 }
 
 .container {
-  max-width: 1280px;
-  padding-right: 12px;
-  padding-left: 12px;
+  max-width: 1440px;
+  padding-right: 46px;
+  padding-left: 46px;
   margin: 0 auto;
 }
 

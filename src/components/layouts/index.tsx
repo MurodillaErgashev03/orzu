@@ -1,5 +1,5 @@
-import AuthLayout from "./auth";
+// import AuthLayout from "./auth";
 import MainLayout from "./main";
 import ProfileLayout from "./profile";
 
-export { AuthLayout, MainLayout, ProfileLayout };
+export { MainLayout, ProfileLayout };

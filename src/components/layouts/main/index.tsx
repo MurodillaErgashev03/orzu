@@ -1,6 +1,8 @@
-import { useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
-import { scrollToTop } from 'src/utils';
+import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { scrollToTop } from "src/utils";
+import Header from "./header";
+import Footer from "./footer";
 
 function Main() {
   // Scroll to top when route changes
@@ -12,7 +14,13 @@ function Main() {
 
   return (
     <div>
-      <Outlet />
+      <div>
+        <Header />
+      </div>
+      {/* <Outlet />
+      <div>
+        <Footer />
+      </div> */}
     </div>
   );
 }
