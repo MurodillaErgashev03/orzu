@@ -1,9 +1,15 @@
 @import "src/styles/variables.scss";
 
 .header {
-  padding: 20px 0 10px 0;
-  background: inherit;
+  // padding: 20px 0 10px 0;
+  // padding-top: 15px;
+  // height: 84px;
+  background: transparent;
+  position: absolute;
+  width: 100%;
+
   .content {
+    padding-top: 15px;
     @include flex($justify: space-between, $align: center);
 
     .leftBlock {

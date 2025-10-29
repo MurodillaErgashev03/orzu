@@ -17,8 +17,8 @@ function Main() {
       <div>
         <Header />
       </div>
-      {/* <Outlet />
-      <div>
+      <Outlet />
+      {/* <div>
         <Footer />
       </div> */}
     </div>

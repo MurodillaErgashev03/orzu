@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
-import { CustomButton } from 'src/components/common';
-import styles from './home.module.scss';
+import { Link } from "react-router-dom";
+import { CustomButton } from "src/components/common";
+import styles from "./home.module.scss";
+import HomeHero from "./sections/hero";
+import HomeSlide from "./sections/slide";
 
 function Home() {
   return (
     <div className={styles.home}>
-      <h1 className={styles.title}>Home</h1>
-      <Link to="/help">
-        <CustomButton type="primary">Go to help page</CustomButton>
-      </Link>
+      <HomeHero />
+      <HomeSlide />
     </div>
   );
 }

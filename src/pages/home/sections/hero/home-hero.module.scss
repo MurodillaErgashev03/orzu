@@ -1,0 +1,59 @@
+@import "src/styles/variables.scss";
+
+.hero {
+  height: 800px;
+  background-image: url("../../../../assets/img/herobg.png");
+
+  .content {
+    padding-top: 105px;
+
+    .videoWrapper {
+      @include flex($align: center, $justify: center);
+    }
+    .imagesWrapper {
+      margin-top: -320px;
+      @include flex($align: center, $justify: space-between);
+    }
+
+    .textWrapper {
+      @include flex($align: center, $justify: space-between);
+
+      .titleBlock {
+        max-width: 670px;
+        h3 {
+          font-weight: 800;
+          font-size: 50px;
+          line-height: 80%;
+        }
+        p {
+          font-size: 14px;
+          font-family: $font-secondary;
+          margin-top: 17px;
+        }
+      }
+      .informationBlock {
+        div {
+          background-color: #f38995;
+          padding: 10px 17px;
+          border-radius: 25px;
+          span {
+            font-weight: 800;
+            font-size: 50px;
+            line-height: 80%;
+          }
+        }
+        h4 {
+          font-weight: 800;
+          font-size: 50px;
+          line-height: 80%;
+          margin-top: 17px;
+        }
+        p {
+          font-size: 14px;
+          font-family: $font-secondary;
+          margin-top: 13px;
+        }
+      }
+    }
+  }
+}

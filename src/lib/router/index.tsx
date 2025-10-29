@@ -1,7 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // Layouts
-import { AuthLayout, MainLayout } from "src/components/layouts";
+import {  MainLayout } from "src/components/layouts";
 
 // Pages
 import { Custom404Page, HelpPage, HomePage } from "src/pages";
