@@ -6,6 +6,8 @@ import { useTypedSelector } from "src/app/store";
 type CombinedProps = ButtonProps & MarginTypes;
 
 interface Props extends Omit<CombinedProps, "type"> {
+  fontSize?: React.CSSProperties["fontSize"];
+  fontWeight?: React.CSSProperties["fontWeight"];
   bg?: string;
   width?: React.CSSProperties["width"];
   height?: number;
@@ -26,12 +28,15 @@ export default function CustomButton({
   borderColor,
   textColor,
   borderRadius = 25,
+  fontWeight = 500,
+  fontSize = 20,
   m,
   mt,
   mb,
   ml,
   mr,
   style,
+
   ...rest
 }: Props) {
   // const colors = useTypedSelector((state) => state.layout.colors);
@@ -91,6 +96,7 @@ export default function CustomButton({
         style={{
           color: textColor,
           width,
+          height,
           borderRadius,
           margin: m,
           marginTop: mt,
@@ -100,6 +106,8 @@ export default function CustomButton({
           boxShadow: "none",
           backgroundColor: bg,
           border: `2px solid ${borderColor}`,
+          fontSize,
+          fontWeight,
 
           ...style,
         }}

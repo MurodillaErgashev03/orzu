@@ -1,0 +1,21 @@
+@import "src/styles/variables.scss";
+
+.dreamkids {
+  padding: 100px 0 115px 0;
+
+  .contentTop {
+    @include flex($align: center, $justify: space-between);
+    .title {
+      font-size: 84px;
+      font-weight: 700;
+      line-height: 80%;
+    }
+  }
+
+  .cards {
+    padding-left: 5%;
+    margin-top: 47px;
+    @include flex($align: center);
+    // gap: 33px;
+  }
+}
