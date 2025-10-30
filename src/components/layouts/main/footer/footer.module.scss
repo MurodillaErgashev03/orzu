@@ -1,0 +1,140 @@
+@import "src/styles/variables.scss";
+
+.footer {
+  position: relative;
+  //   margin-bottom: 200px;
+
+  .topContent {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    .leftBg,
+    .rightBg {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .leftBg {
+      left: 0;
+      background: yellow;
+    }
+
+    .rightBg {
+      right: 0;
+      background: #3c7cf5;
+    }
+
+    .inner {
+      width: 100% !important;
+      display: flex;
+
+      .leftBlock,
+      .rightBlock {
+        width: 100%;
+      }
+
+      .leftBlock {
+        padding: 20px 30px 20px 0;
+        @include flex($align: center, $justify: space-between);
+        h3 {
+          max-width: 400px;
+          font-size: 44px;
+          line-height: 100%;
+        }
+        .dateBlock {
+          margin-top: 7px;
+          display: inline-block;
+          border-radius: 25px;
+          background-color: #f38995;
+          padding: 2px 16px;
+
+          p {
+            font-size: 50px;
+          }
+        }
+      }
+      .rightContent {
+        height: 100%;
+        margin-bottom: -20px;
+        @include flex($align: center, $justify: space-between);
+        gap: 12px;
+
+        .image {
+          margin-bottom: -35px;
+        }
+
+        h3 {
+          font-size: 46px;
+          color: white;
+        }
+
+        .location {
+          margin-top: 14px;
+          h4,
+          p {
+            font-size: 14px;
+            font-family: $font-secondary;
+            color: white;
+            font-weight: 500;
+          }
+          p {
+            text-align: end;
+          }
+        }
+      }
+    }
+  }
+
+  .bottomContent {
+    margin-top: 45px;
+    margin-bottom: 35px;
+
+
+    
+    .linkWrapper {
+      h5 {
+        font-family: $font-secondary;
+        font-size: 16px;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-top: 17px;
+        margin-bottom: 58px;
+        a {
+          font-family: $font-secondary;
+          font-size: 16px;
+          color: black;
+          font-weight: 500;
+        }
+      }
+      p {
+        font-family: $font-secondary;
+        font-size: 16px;
+        color: black;
+      }
+    }
+    .documents {
+      h5 {
+        font-family: $font-secondary;
+        font-size: 16px;
+      }
+      div {
+        margin-top: 17px;
+      }
+      p {
+        font-family: $font-secondary;
+        font-size: 16px;
+        color: black;
+      }
+      .icons{
+        margin-top: 55px;
+      }
+    }
+  }
+}

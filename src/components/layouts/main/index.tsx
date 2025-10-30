@@ -18,9 +18,9 @@ function Main() {
         <Header />
       </div>
       <Outlet />
-      {/* <div>
+      <div>
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 }

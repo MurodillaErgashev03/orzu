@@ -63,7 +63,7 @@ function IdeaSupport() {
       <div className="container">
         <div className={styles.content}>
           <div className={styles.leftBlock}>
-            <h2 className={styles.title}>Поддержи идею</h2>
+            <h2 className={styles.title}>ПОДДЕРЖИ ИДЕЮ</h2>
             <CustomButton
               style={{
                 height: 100,

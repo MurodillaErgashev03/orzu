@@ -10,7 +10,7 @@ function Partners() {
     <div className={styles.partners}>
       <div className="container">
         <div className={styles.titleContent}>
-          <h3>партнеры</h3>
+          <h3>ПАРТНЁРЫ</h3>
           <p>
             Этот проект стал возможен благодаря тем, кто верит в силу искусства,
             технологии и важность инклюзии.
