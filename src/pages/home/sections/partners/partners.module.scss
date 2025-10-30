@@ -1,0 +1,37 @@
+@import "src/styles/variables.scss";
+
+.partners {
+  padding: 133px 0 115px 0;
+  .titleContent {
+    @include flex($align: center, $justify: space-between);
+
+    h3 {
+      font-size: 82px;
+      line-height: 80%;
+    }
+    p {
+      max-width: 430px;
+      font-family: $font-secondary;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .backImgWrapper {
+    padding: 25px;
+    margin-top: 65px;
+    height: 440px;
+    background-image: url("../../../../assets/img/backimg.png");
+
+    p {
+      max-width: 430px;
+      font-family: $font-secondary;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+  .logos {
+    margin-top: 35px;
+    justify-content: space-around;
+    @include flex($align: center, $justify: space-around);
+  }
+}
