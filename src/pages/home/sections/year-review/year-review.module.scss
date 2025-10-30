@@ -1,0 +1,50 @@
+@import "src/styles/variables.scss";
+
+.yearReview {
+  padding-top: 115px;
+  padding-bottom: 130px;
+  background-color: #ececec;
+
+  .content {
+    .topBlock {
+      @include flex();
+      gap: 16px;
+    }
+    .textWrapper {
+      width: 642px;
+      h2 {
+        font-size: 82px;
+        line-height: 80%;
+      }
+      .descriptionWrapper {
+        @include flex();
+        margin-top: 50px;
+        p {
+          font-family: $font-secondary;
+          font-size: 16px;
+        }
+      }
+    }
+    .cards {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      justify-items: center;
+      align-items: start;
+
+      .card {
+        width: 100%;
+        padding: 25px;
+        border: 2px solid #327bfb;
+        border-radius: 33px;
+        h3 {
+          font-size: 42px;
+          line-height: 80%;
+          max-width: 270px;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}
