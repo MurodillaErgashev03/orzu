@@ -1,7 +1,6 @@
-import { Button, ButtonProps, ConfigProvider } from "antd";
-import { colors, MarginTypes } from "src/constants/theme";
+import { ButtonProps, ConfigProvider } from "antd";
+import { MarginTypes } from "src/constants/theme";
 import styles from "./button.module.scss";
-import { useTypedSelector } from "src/app/store";
 
 type CombinedProps = ButtonProps & MarginTypes;
 

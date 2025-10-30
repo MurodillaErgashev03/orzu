@@ -1,0 +1,141 @@
+@import "src/styles/variables.scss";
+
+$animation-duration: 40s;
+$number-of-sets: 3;
+$item-spacing: 20px;
+$visible-cards: 3;
+
+$card-height: 100px;
+
+$visible-height: calc(
+  $card-height * #{$visible-cards} + $item-spacing * (#{$visible-cards} - 1)
+);
+
+@keyframes scroll-up {
+  to {
+    transform: translateY(calc(-100% / #{$number-of-sets}));
+  }
+}
+
+.ideaSupport {
+  margin-bottom: 100px;
+
+  .content {
+    @include flex($justify: space-between);
+    padding: 50px;
+    background: #327bfb;
+    border-radius: 66px;
+
+    .leftBlock {
+      width: 500px;
+
+      .title {
+        color: #ffffff;
+        font-size: 116px;
+        line-height: 80%;
+        margin-bottom: 125px;
+      }
+    }
+
+    .rightBlock {
+      padding-left: 50px;
+
+      .titleBlock {
+        gap: 86px;
+        @include flex($justify: space-between, $align: center);
+        margin-bottom: 20px;
+
+        h3 {
+          font-size: 50px;
+          color: #ffffff;
+        }
+      }
+
+      .carouselContainer {
+        height: $visible-height;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        padding-top: 15px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 50px;
+          z-index: 10;
+        }
+
+        &::before {
+          top: 0;
+          background: linear-gradient(to bottom, #327bfb, rgba(#327bfb, 0));
+        }
+
+        &::after {
+          bottom: 0;
+          background: linear-gradient(to top, #327bfb, rgba(#327bfb, 0));
+        }
+      }
+
+      .carouselTrack {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        animation: scroll-up $animation-duration linear infinite;
+        &:hover {
+          animation-play-state: paused;
+        }
+      }
+
+      .donatorCard {
+        width: 100%;
+        min-height: $card-height;
+        margin-bottom: $item-spacing;
+        background-color: #0a52d2;
+        border-radius: 20px;
+
+        margin-right: 0;
+
+        .cardContent {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          padding: 15px;
+        }
+
+        .cardAvatarWrapper {
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 15px;
+          margin-left: 30px;
+          flex-shrink: 0;
+        }
+
+        .cardAvatar {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .cardName {
+          font-size: 36px;
+          font-weight: bold;
+          margin: 0;
+          color: white;
+        }
+
+        .cardQuote {
+          font-family: $font-secondary;
+          font-size: 20px;
+          font-weight: 300;
+          margin: 0;
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+}
