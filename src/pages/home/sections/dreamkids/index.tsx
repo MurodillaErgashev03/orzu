@@ -5,14 +5,28 @@ import { colors } from "src/constants/theme";
 import { Swiper, SwiperSlide } from "swiper/react";
 import KidsCards from "./components/cards";
 import styles from "./dreamkids.module.scss";
+import { useNavigate } from "react-router-dom";
 
 function DreamKids() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/all-cards");
+  };
   return (
     <div className={styles.dreamkids}>
       <div className="container">
         <div className={styles.contentTop}>
           <h2 className={styles.title}>Дети, которые мечтают</h2>
-          <CustomButton borderColor={colors.black}>Посмотреть все</CustomButton>
+          <CustomButton
+            style={{
+              cursor: "pointer",
+            }}
+            onClick={handleClick}
+            borderColor={colors.black}
+          >
+            Посмотреть все
+          </CustomButton>
         </div>
       </div>
       <div className={styles.cards} style={{ marginTop: "47px" }}>
