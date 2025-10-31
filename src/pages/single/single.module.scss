@@ -1,0 +1,58 @@
+@import "src/styles/variables.scss";
+
+.single {
+  padding-top: 120px;
+  padding-bottom: 84px;
+  .content {
+    .userCard {
+      padding: 20px 14px;
+      width: 413px;
+      background-color: #f5f5f5;
+      border-radius: 33px;
+
+      h3 {
+        font-size: 32px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+      p {
+        font-family: $font-secondary;
+        font-size: 20px;
+        line-height: 90%;
+        font-style: italic;
+      }
+    }
+    .bottomBlock {
+      margin-top: 50px;
+      justify-content: space-between;
+
+      .leftBlock {
+        width: 916px;
+        background: #faff00;
+        padding: 33px;
+        border-radius: 33px;
+        justify-content: space-between;
+
+        div {
+          width: 300px;
+          h3 {
+            font-size: 82px;
+          }
+          p {
+            font-family: $font-secondary;
+            font-size: 20px;
+            font-style: italic;
+          }
+        }
+
+        h5 {
+          width: 300px;
+          color: #4d90eb;
+          font-size: 32px;
+          line-height: 80%;
+          margin-top: 400px;
+        }
+      }
+    }
+  }
+}

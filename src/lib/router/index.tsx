@@ -1,10 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // Layouts
-import {  MainLayout } from "src/components/layouts";
+import { MainLayout } from "src/components/layouts";
 
 // Pages
 import { Custom404Page, HelpPage, HomePage } from "src/pages";
+import SinglePage from "src/pages/single";
 
 function RouterProvider() {
   return (
@@ -16,6 +17,7 @@ function RouterProvider() {
         {/* Main Layout */}
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="single" element={<SinglePage />} />
         </Route>
 
         {/* Auth layout */}
