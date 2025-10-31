@@ -7,6 +7,7 @@ import { MainLayout } from "src/components/layouts";
 import { Custom404Page, HelpPage, HomePage } from "src/pages";
 import DonatePage from "src/pages/donate";
 import SinglePage from "src/pages/single";
+import Thanks from "src/pages/thanks";
 
 function RouterProvider() {
   return (
@@ -20,6 +21,7 @@ function RouterProvider() {
           <Route index element={<HomePage />} />
           <Route path="single" element={<SinglePage />} />
           <Route path="donate" element={<DonatePage />} />
+          <Route path="thanks" element={<Thanks />} />
         </Route>
 
         {/* Auth layout */}

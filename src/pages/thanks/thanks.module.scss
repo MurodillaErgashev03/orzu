@@ -1,0 +1,23 @@
+@import "src/styles/variables.scss";
+
+.thanks {
+  padding-top: 110px;
+  padding-bottom: 84px;
+
+  .content {
+    padding: 33px;
+    border-radius: 33px;
+    background-image: url(../../assets/img/thanks-bg1.png);
+
+    h3 {
+      font-size: 115px;
+      max-width: 580px;
+      line-height: 80%;
+    }
+
+    .buttonBlock {
+      @include flex($justify: space-between);
+      margin-top: 322px;
+    }
+  }
+}
