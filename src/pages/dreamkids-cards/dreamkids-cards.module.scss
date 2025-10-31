@@ -1,0 +1,65 @@
+@import "src/styles/variables.scss";
+
+.kidsAllCards {
+  padding-top: 105px;
+  padding-bottom: 200px;
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    .kidsCards {
+      @include flex();
+      //   width: 450px;
+      padding: 20px;
+      border-radius: 20px;
+      // background-color: #4d90eb;
+
+      .topcontent {
+        // width: 276px;
+        @include flex($align: center);
+        gap: 13px;
+
+        .avatar {
+          width: 66px;
+          height: 66px;
+          border-radius: 50%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .name {
+          font-size: 26px;
+          max-width: 200px;
+          line-height: 80%;
+        }
+      }
+
+      .images {
+        width: 396px;
+        height: 371px;
+      }
+      .bottomContent {
+        margin-top: 150px;
+        .title {
+          font-size: 66px;
+          font-weight: 700;
+          line-height: 80%;
+          margin-top: 30px;
+          @include line-clamp(1);
+        }
+        .description {
+          font-size: 14px;
+          font-family: $font-secondary;
+          margin-top: 16px;
+          line-height: auto;
+          height: 65px;
+          @include line-clamp(4);
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,8 @@ import { MainLayout } from "src/components/layouts";
 // Pages
 import { Custom404Page, HelpPage, HomePage } from "src/pages";
 import DonatePage from "src/pages/donate";
+import KidsAllCards from "src/pages/dreamkids-cards";
+import Share from "src/pages/share";
 import SinglePage from "src/pages/single";
 import Thanks from "src/pages/thanks";
 
@@ -22,7 +24,9 @@ function RouterProvider() {
           <Route path="single" element={<SinglePage />} />
           <Route path="donate" element={<DonatePage />} />
           <Route path="thanks" element={<Thanks />} />
+          <Route path="all-cards" element={<KidsAllCards />} />
         </Route>
+        <Route path="share" element={<Share />} />
 
         {/* Auth layout */}
 
