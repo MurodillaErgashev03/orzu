@@ -9,6 +9,7 @@ function HomeHero() {
         <div className={styles.content}>
           <div className={styles.videoWrapper}>
             <iframe
+              className={styles.iframe}
               style={{
                 borderRadius: "20px",
               }}
@@ -37,6 +38,9 @@ function HomeHero() {
 
           <div className={styles.textWrapper}>
             <div className={styles.titleBlock}>
+              <div className={styles.mobileBlock}>
+                <span>20.11-03.12</span>
+              </div>
               <h3>выставка Скульптур слабовидящих и незрячих детей </h3>
               <p>
                 это социально-арт-проект, созданный для поддержки слабовидящих и

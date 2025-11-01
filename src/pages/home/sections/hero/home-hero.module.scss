@@ -1,7 +1,8 @@
 @import "src/styles/variables.scss";
 
 .hero {
-  height: 800px;
+  height: auto;
+  padding-bottom: 20px;
   background-image: url("../../../../assets/img/herobg.png");
 
   .content {
@@ -17,6 +18,10 @@
 
     .textWrapper {
       @include flex($align: center, $justify: space-between);
+
+      .mobileBlock {
+        display: none;
+      }
 
       .titleBlock {
         max-width: 670px;
@@ -36,6 +41,7 @@
           background-color: #f38995;
           padding: 10px 17px;
           border-radius: 25px;
+          display: inline-block;
           span {
             font-weight: 800;
             font-size: 50px;
@@ -53,6 +59,117 @@
           font-family: $font-secondary;
           margin-top: 13px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    height: auto;
+    .textWrapper {
+      flex-direction: column !important;
+
+      .mobileBlock {
+        background-color: #f38995;
+        padding: 10px 17px;
+        border-radius: 25px;
+        display: inline-block !important;
+        margin-bottom: 15px;
+        span {
+          font-weight: 800;
+          font-size: 50px;
+          line-height: 80%;
+        }
+      }
+
+      .informationBlock {
+        div {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1056px) {
+  .hero {
+    .imagesWrapper {
+      margin-top: -200px !important;
+      .leftImage {
+        width: 300px;
+      }
+      .rightImage {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero {
+    .imagesWrapper {
+      margin-top: -130px !important;
+      .leftImage {
+        width: 200px;
+      }
+      .rightImage {
+        width: 200px;
+      }
+    }
+
+    .iframe {
+      width: 400px;
+      height: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero {
+    .imagesWrapper {
+      margin-top: -80px !important;
+      .leftImage {
+        width: 120px;
+      }
+      .rightImage {
+        width: 120px;
+      }
+    }
+
+    .iframe {
+      width: 350px;
+      height: 200px;
+    }
+    .mobileBlock {
+      margin-top: 43px;
+      padding: 10px 15px;
+
+      span {
+        font-size: 32px !important;
+      }
+    }
+
+    .titleBlock {
+      width: 100%;
+      h3 {
+        font-size: 40px !important;
+      }
+      p {
+        font-size: 14px;
+        font-family: $font-secondary;
+        margin-top: 17px;
+      }
+    }
+    .informationBlock {
+      width: 100% !important;
+      h4 {
+        font-size: 20px !important;
+      }
+      p {
+        font-size: 18px !important;
+        font-family: $font-secondary;
+        margin-top: 0 !important;
       }
     }
   }
