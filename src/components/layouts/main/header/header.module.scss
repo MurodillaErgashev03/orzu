@@ -65,32 +65,6 @@
     pointer-events: none;
     transition: all 0.3s ease;
 
-    :global {
-      .ant-select {
-        border: none !important;
-        border-radius: 25px;
-        background-color: #f5f5f5;
-        height: auto;
-
-        &-selector {
-          border: none !important;
-          padding: 20px;
-          height: 54px !important;
-          border-radius: 25px;
-          box-shadow: none !important;
-        }
-
-        &-arrow {
-          display: none;
-        }
-
-        &-selection-item {
-          padding-right: 0;
-          color: $black;
-        }
-      }
-    }
-
     &.open {
       transform: translateY(0);
       opacity: 1;
@@ -98,11 +72,23 @@
     }
   }
 
-  // 🔸 Responsive
   @media (max-width: 756px) {
     .content {
       .leftBlock {
-        display: none; // ekranda yo‘qoladi
+        gap: 24px;
+
+        :global {
+          .ant-select {
+            &-selector {
+              height: 35px !important;
+              border-radius: 25px;
+            }
+          }
+        }
+
+        button {
+          display: none;
+        }
       }
 
       .burger {

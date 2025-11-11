@@ -2,9 +2,9 @@
 
 .kidsCards {
   width: 450px;
+  min-height: auto;
   padding: 33px 26px 50px 26px;
   border-radius: 20px;
-  // background-color: #4d90eb;
 
   .topcontent {
     width: 276px;
@@ -40,14 +40,55 @@
       line-height: 80%;
       margin-top: 30px;
       @include line-clamp(1);
-    }
+    } 
     .description {
       font-size: 14px;
       font-family: $font-secondary;
       margin-top: 16px;
       line-height: auto;
-      height: 65px;
+      // height: 65px;
       @include line-clamp(4);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .kidsCards {
+    width: 330px;
+    padding: 24px 18px 35px 18px;
+    border-radius: 15px;
+
+    .topcontent {
+      width: 200px;
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+      }
+
+      .name {
+        font-size: 24px;
+      }
+    }
+
+    .images {
+      width: 290px;
+      height: 195px;
+      object-fit: cover;
+    }
+    .bottomContent {
+      .title {
+        font-size: 40px;
+        margin-top: 24px;
+      }
+      .description {
+        font-size: 20px;
+        font-family: $font-secondary;
+        margin-top: 16px;
+        line-height: auto;
+        // height: 70px;
+        @include line-clamp(4);
+      }
     }
   }
 }

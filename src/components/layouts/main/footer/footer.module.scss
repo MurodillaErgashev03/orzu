@@ -2,7 +2,6 @@
 
 .footer {
   position: relative;
-  //   margin-bottom: 200px;
 
   .topContent {
     position: relative;
@@ -31,6 +30,9 @@
     .inner {
       width: 100% !important;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
 
       .leftBlock,
       .rightBlock {
@@ -40,11 +42,13 @@
       .leftBlock {
         padding: 20px 30px 20px 0;
         @include flex($align: center, $justify: space-between);
+
         h3 {
           max-width: 400px;
           font-size: 44px;
           line-height: 100%;
         }
+
         .dateBlock {
           margin-top: 7px;
           display: inline-block;
@@ -57,14 +61,17 @@
           }
         }
       }
+
       .rightContent {
         height: 100%;
-        margin-bottom: -20px;
         @include flex($align: center, $justify: space-between);
         gap: 12px;
 
         .image {
           margin-bottom: -35px;
+          display: block;
+          max-width: 160px;
+          height: auto;
         }
 
         h3 {
@@ -74,6 +81,7 @@
 
         .location {
           margin-top: 14px;
+
           h4,
           p {
             font-size: 14px;
@@ -81,6 +89,7 @@
             color: white;
             font-weight: 500;
           }
+
           p {
             text-align: end;
           }
@@ -88,13 +97,29 @@
       }
     }
   }
+  .mobileBlock {
+    display: none;
+    h5 {
+      font-family: $font-secondary;
+      font-size: 16px;
+    }
 
+    div {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        font-family: $font-secondary;
+        font-size: 16px;
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
   .bottomContent {
     margin-top: 45px;
     margin-bottom: 35px;
 
-
-    
     .linkWrapper {
       h5 {
         font-family: $font-secondary;
@@ -106,6 +131,7 @@
         flex-direction: column;
         margin-top: 17px;
         margin-bottom: 58px;
+
         a {
           font-family: $font-secondary;
           font-size: 16px;
@@ -113,27 +139,168 @@
           font-weight: 500;
         }
       }
+
       p {
         font-family: $font-secondary;
         font-size: 16px;
         color: black;
       }
     }
+
     .documents {
       h5 {
         font-family: $font-secondary;
         font-size: 16px;
       }
+
       div {
         margin-top: 17px;
       }
+
       p {
         font-family: $font-secondary;
         font-size: 16px;
         color: black;
       }
-      .icons{
+
+      .icons {
         margin-top: 55px;
+      }
+    }
+  }
+
+  @media (max-width: 1250px) {
+    .topContent {
+      flex-direction: column;
+      background: linear-gradient(
+        to bottom,
+        yellow 0%,
+        yellow 50%,
+        #3c7cf5 50%,
+        #3c7cf5 100%
+      );
+      min-height: 400px;
+    }
+
+    .topContent .leftBg,
+    .topContent .rightBg {
+      display: none;
+    }
+
+    .topContent .inner {
+      flex-direction: column;
+      position: relative;
+      z-index: 10;
+    }
+
+    .inner .leftBlock {
+      background: transparent;
+    }
+
+    .inner .rightContent {
+      padding-top: 20px;
+    }
+
+    .rightContent {
+      .image {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    .topContent {
+      min-height: 200px;
+
+      .leftBg,
+      .rightBg {
+        height: 100px;
+      }
+      .inner {
+        gap: 0;
+        .leftBlock {
+          padding: 10px 25px 10px 0;
+          height: 100px;
+
+          h3 {
+            max-width: 220px;
+            font-size: 24px;
+            line-height: 100%;
+          }
+
+          .dateBlock {
+            margin-top: 4px;
+            border-radius: 14px;
+            padding: 2px 7px;
+
+            p {
+              font-size: 28px;
+            }
+          }
+        }
+
+        .rightContent {
+          padding: 0;
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+
+          .image {
+            align-self: flex-end;
+            margin-bottom: 0 !important;
+          }
+
+          h3 {
+            font-size: 26px;
+            color: white;
+          }
+
+          .location {
+            margin-top: 10px;
+
+            h4,
+            p {
+              font-size: 8px;
+            }
+
+            p {
+              text-align: end;
+            }
+          }
+        }
+      }
+    }
+    .bottomContent {
+      display: none;
+    }
+    .mobileBlock {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      .documents {
+        margin-top: 30px;
+        h5 {
+          font-family: $font-secondary;
+          font-size: 16px;
+        }
+
+        div {
+          margin-top: 17px;
+        }
+
+        p {
+          font-family: $font-secondary;
+          font-size: 16px;
+          color: black;
+        }
+      }
+      .mobileTitle {
+        font-family: $font-secondary;
+        font-size: 20px;
+        color: black;
+        margin-top: 50px;
       }
     }
   }

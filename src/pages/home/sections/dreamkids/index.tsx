@@ -6,9 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import KidsCards from "./components/cards";
 import styles from "./dreamkids.module.scss";
 import { useNavigate } from "react-router-dom";
+import { useScreenSize } from "src/utils/useWindowSize";
 
 function DreamKids() {
   const navigate = useNavigate();
+  const isMobile = useScreenSize(786);
 
   const handleClick = () => {
     navigate("/all-cards");
@@ -21,6 +23,7 @@ function DreamKids() {
           <CustomButton
             style={{
               cursor: "pointer",
+              display: isMobile ? "none" : "inline-block",
             }}
             onClick={handleClick}
             borderColor={colors.black}
@@ -33,6 +36,32 @@ function DreamKids() {
         <Swiper
           spaceBetween={33}
           slidesPerView={2.9}
+          breakpoints={{
+            320: {
+              slidesPerView: 1.1,
+              spaceBetween: 10,
+            },
+            450: {
+              slidesPerView: 1.2,
+              spaceBetween: 10,
+            },
+            560: {
+              slidesPerView: 1.6,
+              spaceBetween: 15,
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 1.9,
+              spaceBetween: 20,
+            },
+            1420: {
+              slidesPerView: 2.9,
+              spaceBetween: 20,
+            },
+          }}
           loop={true}
           style={{ width: "100%" }}
         >
@@ -57,6 +86,19 @@ function DreamKids() {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="container">
+        <CustomButton
+          style={{
+            cursor: "pointer",
+            marginTop: "32px",
+            display: isMobile ? "inline-block" : "none",
+          }}
+          onClick={handleClick}
+          borderColor={colors.black}
+        >
+          Посмотреть все
+        </CustomButton>
       </div>
     </div>
   );

@@ -1,8 +1,5 @@
-@import './variables.scss';
-@import './help.scss';
-
-
-
+@import "./variables.scss";
+@import "./help.scss";
 
 *,
 :after,
@@ -35,7 +32,6 @@ a {
 
 .root {
   min-height: 100vh;
-  // overflow-x: hidden;
 }
 
 .container {
@@ -43,6 +39,11 @@ a {
   padding-right: 46px;
   padding-left: 46px;
   margin: 0 auto;
+
+  @media (max-width: 576px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .input {

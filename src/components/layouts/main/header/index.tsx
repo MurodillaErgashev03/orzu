@@ -6,9 +6,11 @@ import { colors } from "src/constants/theme";
 import { Link } from "react-router-dom";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import styles from "./header.module.scss";
+import { useScreenSize } from "src/utils/useWindowSize";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const isMobile = useScreenSize(756);
 
   return (
     <header className={styles.header}>
@@ -35,34 +37,18 @@ function Header() {
               >
                 пожертвовать
               </CustomButton>
-            </div>
-
-            {/* Burger icon */}
-            <div
-              className={styles.burger}
-              onClick={() => setOpenMenu(!openMenu)}
-            >
-              {openMenu ? <CloseOutlined /> : <MenuOutlined />}
+              <div
+                className={styles.burger}
+                onClick={() => setOpenMenu(!openMenu)}
+              >
+                {openMenu ? <CloseOutlined /> : <MenuOutlined />}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div
-        className={`${styles.mobileMenu} ${
-          openMenu ? styles.open : ""
-        }`}
-      >
-        <Select
-          defaultValue="UZ"
-          options={[
-            { value: "UZ", label: "UZ" },
-            { value: "RU", label: "RU" },
-            { value: "ENG", label: "ENG" },
-          ]}
-        />
-
+      <div className={`${styles.mobileMenu} ${openMenu ? styles.open : ""}`}>
         <CustomButton
           borderColor={colors.black}
           bg={colors.black}

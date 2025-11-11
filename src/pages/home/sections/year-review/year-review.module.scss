@@ -48,3 +48,65 @@
     }
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .yearReview {
+    .content {
+      .topBlock {
+        flex-direction: column;
+
+        .iframe {
+          width: 100%;
+        }
+      }
+
+      .textWrapper {
+        width: 100%;
+
+        .descriptionWrapper {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .yearReview {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .content {
+      .textWrapper {
+        h2 {
+          font-size: 48px;
+          line-height: 80%;
+        }
+        .descriptionWrapper {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .yearReview {
+
+    .iframe{
+      height: 205px !important;
+    }
+    .cards {
+      .card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        h3 {
+          font-size: 24px !important;
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+}

@@ -16,6 +16,18 @@
     padding-left: 5%;
     margin-top: 47px;
     @include flex($align: center);
-    // gap: 33px;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 786px) {
+  .dreamkids {
+    padding: 80px 0 !important;
+  }
+  .title {
+    font-size: 48px !important;
+  }
+  .cards {
+    margin-top: 40px !important;
   }
 }

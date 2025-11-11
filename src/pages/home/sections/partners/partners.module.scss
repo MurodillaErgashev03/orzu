@@ -21,7 +21,10 @@
     margin-top: 65px;
     height: 440px;
     background-image: url("../../../../assets/img/backimg.png");
-
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
     p {
       max-width: 430px;
       font-family: $font-secondary;
@@ -33,5 +36,64 @@
     margin-top: 35px;
     justify-content: space-around;
     @include flex($align: center, $justify: space-around);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .partners {
+    .titleContent {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .backImgWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .partnersLogo {
+    transform: scale(0.5) !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .partners {
+    padding: 80px 0 115px 0;
+    .titleContent {
+      h3 {
+        font-size: 48px;
+        line-height: 80%;
+      }
+      p {
+        max-width: 430px;
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+    .backImgWrapper {
+      padding: 25px;
+      margin-top: 65px;
+      height: 440px;
+      background-image: url("../../../../assets/img/backimg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 40px;
+      p {
+        max-width: 430px;
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+    .logos {
+      margin-top: 35px;
+      justify-content: space-around;
+      @include flex($align: center, $justify: space-around);
+    }
   }
 }
