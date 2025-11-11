@@ -1,6 +1,5 @@
 import styles from "./dreamkids-cards.module.scss";
 import avatar from "src/assets/img/avatar.png";
-// import img from "src/assets/img/kids-card-img.png";
 import { CustomButton } from "src/components/common";
 import cardImg from "src/assets/img/all-cardsimg.png";
 import { useScreenSize } from "src/utils/useWindowSize";
@@ -53,7 +52,9 @@ function KidsAllCards() {
                 </div>
               </div>
 
-              <img className={styles.images} src={cardImg} alt={item.title} />
+              <div className={styles.images}>
+                <img src={cardImg} alt={item.title} />
+              </div>
 
               {isMobile ? (
                 <div

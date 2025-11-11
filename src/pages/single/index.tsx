@@ -5,13 +5,16 @@ import img from "src/assets/img/freepik.png";
 import modern from "src/assets/img/modern.png";
 import { I3Dcube } from "iconsax-react";
 import IdeaSupport from "../home/sections/idea-support";
+import { useScreenSize } from "src/utils/useWindowSize";
 
 function SinglePage() {
+  const isMobile = useScreenSize(650);
+
   return (
     <div className={styles.single}>
       <div className="container">
         <div className={styles.content}>
-          <Flex gap={16}>
+          <Flex className={styles.topContent} gap={16}>
             <div className={styles.userCard}>
               <img src={cardimg} alt="card-img" />
               <h3>Шавкатова Севнора</h3>
@@ -26,8 +29,7 @@ function SinglePage() {
                 borderRadius: "20px",
                 width: "100%",
               }}
-              // width="830"
-              // height="470 "
+              className={styles.iframe}
               src="https://www.youtube.com/embed/NHXFQSlXNa4"
               title="YouTube video player"
               frameBorder="0"
@@ -38,7 +40,13 @@ function SinglePage() {
 
           <Flex className={styles.bottomBlock}>
             <Flex className={styles.leftBlock}>
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
                 <div>
                   <h3>Defne</h3>
                   <p>
@@ -49,10 +57,14 @@ function SinglePage() {
                 <h5>Скульптура для выставки</h5>
               </div>
               <img src={img} alt="" />
-              <I3Dcube size="32" color="black" />
+              <h6>Скульптура для выставки</h6>
+
+              {isMobile ? "" : <I3Dcube size="32" color="black" />}
             </Flex>
 
-            <img src={modern} alt="modern" />
+            <div className={styles.images}>
+              <img src={modern} alt="modern" />
+            </div>
           </Flex>
         </div>
       </div>
