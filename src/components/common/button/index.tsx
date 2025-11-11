@@ -19,8 +19,6 @@ interface Props extends Omit<CombinedProps, "type"> {
 }
 export default function CustomButton({
   type,
-  // backgroundColor,
-  // customName,
   bg,
   width,
   height = 54,
@@ -38,57 +36,8 @@ export default function CustomButton({
 
   ...rest
 }: Props) {
-  // const colors = useTypedSelector((state) => state.layout.colors);
-
-  // const giveColors = () => {
-  //   if (customName === "primary") {
-  //     return {
-  //       textColor: "white",
-  //       borderColor: colors.black,
-  //       backgroundColor: colors.primary,
-  //     };
-  //     // } else if (customName === 'default') {
-  //     //   return {
-  //     //     backgroundColor: colors.background,
-  //     //     textColor: colors.colorText,
-  //     //     borderColor: colors.colorText,
-  //     //   };
-  //     // } else if (customName === 'delete') {
-  //     //   return {
-  //     //     backgroundColor: colors.colorDelete,
-  //     //     textColor: colors.colorError,
-  //     //     borderColor: 'transparent',
-  //     //   };
-  //     // } else {
-  //     //   return {
-  //     //     backgroundColor: 'transparent',
-  //     //     textColor: colors.colorText,
-  //     //     borderColor: 'transparent',
-  //     //   };
-  //   }
-  // };
-  // const {
-  //   backgroundColor: background,
-  //   textColor: colortext,
-  //   borderColor: bordertext,
-  // } = giveColors();
-
   return (
-    <ConfigProvider
-    // theme={{
-    //   token: {
-    //     colorBgBase: customName ? background : backgroundColor,
-    //     colorBorder: customName ? bordertext : borderColor,
-    //   },
-    //   components: {
-    //     Button: {
-    //       controlHeight: height,
-    //       paddingContentHorizontal: 30,
-    //       colorText: customName ? colortext : textColor,
-    //     },
-    //   },
-    // }}
-    >
+    <ConfigProvider>
       <button
         className={styles.button}
         {...rest}

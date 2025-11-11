@@ -9,13 +9,17 @@
     gap: 20px;
     .kidsCards {
       @include flex();
-      //   width: 450px;
       padding: 20px;
       border-radius: 20px;
-      // background-color: #4d90eb;
+
+      .leftBlock {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
       .topcontent {
-        // width: 276px;
         @include flex($align: center);
         gap: 13px;
 
@@ -39,11 +43,9 @@
       }
 
       .images {
-        width: 396px;
-        height: 371px;
+        width: 300px;
       }
       .bottomContent {
-        margin-top: 150px;
         .title {
           font-size: 66px;
           font-weight: 700;
@@ -58,6 +60,59 @@
           line-height: auto;
           height: 65px;
           @include line-clamp(4);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1220px) {
+    .cards {
+      .kidsCards {
+        .images {
+          width: 200px;
+          height: 300px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    .cards {
+      // grid-template-columns: repeat(1, 1fr);
+      .kidsCards {
+        .images {
+          width: 170px;
+          height: 250px;
+        }
+        .bottomContent {
+          .title {
+            font-size: 48px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .cards {
+      grid-template-columns: repeat(1, 1fr);
+      .kidsCards {
+        .images {
+          width: 200px;
+          height: 300px;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .cards {
+      grid-template-columns: repeat(1, 1fr);
+      .kidsCards {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .leftBlock {
+          .bottomContent {
+            display: none;
+          }
         }
       }
     }

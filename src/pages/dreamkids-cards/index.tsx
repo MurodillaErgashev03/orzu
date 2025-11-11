@@ -3,6 +3,7 @@ import avatar from "src/assets/img/avatar.png";
 // import img from "src/assets/img/kids-card-img.png";
 import { CustomButton } from "src/components/common";
 import cardImg from "src/assets/img/all-cardsimg.png";
+import { useScreenSize } from "src/utils/useWindowSize";
 
 interface IKidsCardProps {
   avatar: string;
@@ -14,6 +15,8 @@ interface IKidsCardProps {
   onClick?: () => void;
 }
 function KidsAllCards() {
+  const isMobile = useScreenSize(500);
+
   return (
     <div className={styles.kidsAllCards}>
       <div className="container">
@@ -25,7 +28,7 @@ function KidsAllCards() {
                 background: item.background,
               }}
             >
-              <div>
+              <div className={styles.leftBlock}>
                 <div className={styles.topcontent}>
                   <img className={styles.avatar} src={avatar} alt={item.name} />
                   <p className={styles.name}>{item.name}</p>
@@ -44,7 +47,6 @@ function KidsAllCards() {
                     textColor="#1454CD"
                     borderColor="#1454CD"
                     bg="inherit"
-                    //   onClick={onClick}
                   >
                     Подробнее
                   </CustomButton>
@@ -52,6 +54,30 @@ function KidsAllCards() {
               </div>
 
               <img className={styles.images} src={cardImg} alt={item.title} />
+
+              {isMobile ? (
+                <div
+                  style={{
+                    height: "54px",
+                    width: "100%",
+                    marginTop: "25px",
+                  }}
+                >
+                  <CustomButton
+                    width={"100%"}
+                    style={{
+                      width: "100%",
+                    }}
+                    textColor="#1454CD"
+                    borderColor="#1454CD"
+                    bg="inherit"
+                  >
+                    Подробнее
+                  </CustomButton>
+                </div>
+              ) : (
+                ""
+              )}
             </div>
           ))}
         </div>
