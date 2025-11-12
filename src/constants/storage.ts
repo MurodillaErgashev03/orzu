@@ -1,7 +1,7 @@
-export const TOKEN = 'KOTIB_AI_TOKEN';
-export const PROFILE = 'KOTIB_AI_PROFILE';
-export const LANGUAGE = 'KOTIB_AI_LANGUAGE';
-export const THEME = 'KOTIB_AI_COLOR';
+export const TOKEN = "ORZU_TOKEN";
+export const PROFILE = "ORZU_PROFILE";
+export const LANGUAGE = "ORZU_LANGUAGE";
+export const THEME = "ORZU_THEME";
 
 export const STORAGE_KEYS = {
   TOKEN,

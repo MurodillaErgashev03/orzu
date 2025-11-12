@@ -1,0 +1,23 @@
+@use "src/styles/variables" as *;
+
+.select-language {
+  &-wrap {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 20px;
+
+    .language-icon {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+  }
+
+  @media (max-width: 756px) {
+    &-wrap {
+      padding: 8px 15px;
+    }
+  }
+}

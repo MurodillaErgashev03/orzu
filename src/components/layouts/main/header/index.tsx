@@ -7,10 +7,13 @@ import { Link } from "react-router-dom";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import styles from "./header.module.scss";
 import { useScreenSize } from "src/utils/useWindowSize";
+import SelectLang from "./language";
+import { useTranslation } from "react-i18next";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const isMobile = useScreenSize(756);
+  const { t } = useTranslation();
 
   return (
     <header className={styles.header}>
@@ -22,20 +25,15 @@ function Header() {
             </Link>
 
             <div className={styles.leftBlock}>
-              <Select
-                defaultValue="UZ"
-                options={[
-                  { value: "UZ", label: "UZ" },
-                  { value: "RU", label: "RU" },
-                  { value: "ENG", label: "ENG" },
-                ]}
-              />
+              <div className="header-language-select">
+                <SelectLang visible={true} />
+              </div>
               <CustomButton
                 borderColor={colors.black}
                 bg={colors.black}
                 textColor={colors.white}
               >
-                пожертвовать
+                {t("header.button")}
               </CustomButton>
               <div
                 className={styles.burger}
