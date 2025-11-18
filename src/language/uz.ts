@@ -141,4 +141,35 @@ export const languageUz = {
     userAgreement: "Foydalanuvchi shartnomasi",
     privacyPolicy: "Maxfiylik siyosati",
   },
+  donate: {
+    title: "IDEYANI QO‘LLAB-QUVVATLASH",
+    desc: "Orzu 3.0 x AVO — bu g‘amxo‘rlik, texnologiyalar va bolalarning haqiqatni o‘zgartira oladigan ishonchi haqidagi hikoya.",
+    nameBtn: "ISMI",
+    anonimBtn: "ANONIM",
+    supportBtn: "QO‘LLAB-QUVVATLASH",
+    subtitle: "Donatorlar ro‘yxati",
+    name1: "Aysha K.",
+    name2: "Saidkamol K.",
+    name3: "Malika N.",
+    name4: "Amir A.",
+    name5: "Diana R.",
+    name6: "Ibrohim M.",
+    name7: "Fotima X.",
+    name8: "Kamila S.",
+    name9: "Muhammad A.",
+    name10: "Sofiya P.",
+    name11: "Islam J.",
+    name12: "Rayana T.",
+    name13: "Omar Sh.",
+    name14: "Leyla F.",
+  },
+  single: {
+    topTitle: "Shavkatova Sevnora",
+    topdesc:
+      "Farishtaning qo‘riqchisi – oq libos kiygan ayol surati, katta qanotlar bilan; uzun qora sochlar; shaffof shar.",
+
+    bottomLeftDesc:
+      "Farishtaning qo‘riqchisi – oq libos kiygan ayol surati, katta qanotlar bilan; uzun qora sochlar; shaffof shar.",
+    sculptureExhibit: "Ko‘rgazma uchun haykaltaroshlik",
+  },
 };

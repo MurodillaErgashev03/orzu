@@ -18,6 +18,7 @@
       }
       .descriptionWrapper {
         @include flex();
+        gap: 30px;
         margin-top: 50px;
         p {
           font-family: $font-secondary;
@@ -92,8 +93,7 @@
 
 @media screen and (max-width: 600px) {
   .yearReview {
-
-    .iframe{
+    .iframe {
       height: 205px !important;
     }
     .cards {

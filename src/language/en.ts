@@ -134,4 +134,35 @@ export const languageEn = {
     userAgreement: "User Agreement",
     privacyPolicy: "Privacy Policy",
   },
+  donate: {
+    title: "SUPPORT THE IDEA",
+    desc: "Orzu 3.0 x AVO is a story about care, technology, and children's belief that can change reality.",
+    nameBtn: "NAME",
+    anonimBtn: "ANONYMOUS",
+    supportBtn: "SUPPORT",
+    subtitle: "List of Donors",
+    name1: "Aysha K.",
+    name2: "Saidkamol K.",
+    name3: "Malika N.",
+    name4: "Amir A.",
+    name5: "Diana R.",
+    name6: "Ibrohim M.",
+    name7: "Fotima X.",
+    name8: "Kamila S.",
+    name9: "Muhammad A.",
+    name10: "Sofiya P.",
+    name11: "Islam J.",
+    name12: "Rayana T.",
+    name13: "Omar Sh.",
+    name14: "Leyla F.",
+  },
+  single: {
+    topTitle: "Shavkatova Sevnora",
+    topdesc:
+      "Guardian angel – a female figure in a white dress with large wings; long black hair; crystal sphere.",
+
+    bottomLeftDesc:
+      "Guardian angel – a female figure in a white dress with large wings; long black hair; crystal sphere.",
+    sculptureExhibit: "Sculpture for exhibition",
+  },
 };

@@ -3,27 +3,30 @@ import styles from "./donate.module.scss";
 import { Flex } from "antd";
 import avatar from "src/assets/img/donate-avatar.png";
 import { useScreenSize } from "src/utils/useWindowSize";
-
-const kidsData = [
-  { img: avatar, title: "Айша К." },
-  { img: avatar, title: "Саидкамол К." },
-  { img: avatar, title: "Малика Н." },
-  { img: avatar, title: "Амир А." },
-  { img: avatar, title: "Диана Р." },
-  { img: avatar, title: "Иброхим М." },
-  { img: avatar, title: "Фотима Х." },
-  { img: avatar, title: "Камила С." },
-  { img: avatar, title: "Мухаммад А." },
-  { img: avatar, title: "София П." },
-  { img: avatar, title: "Ислам Ж." },
-  { img: avatar, title: "Раяна Т." },
-  { img: avatar, title: "Омар Ш." },
-  { img: avatar, title: "Лейла Ф." },
-];
+import { useTranslation } from "react-i18next";
 
 function DonatePage() {
   const isDesktop = useScreenSize(1130);
   const isMobile = useScreenSize(850);
+
+  const { t } = useTranslation();
+
+  const kidsData = [
+    { img: avatar, title: t("donate.name1") },
+    { img: avatar, title: t("donate.name2") },
+    { img: avatar, title: t("donate.name3") },
+    { img: avatar, title: t("donate.name4") },
+    { img: avatar, title: t("donate.name5") },
+    { img: avatar, title: t("donate.name6") },
+    { img: avatar, title: t("donate.name7") },
+    { img: avatar, title: t("donate.name8") },
+    { img: avatar, title: t("donate.name9") },
+    { img: avatar, title: t("donate.name10") },
+    { img: avatar, title: t("donate.name11") },
+    { img: avatar, title: t("donate.name12") },
+    { img: avatar, title: t("donate.name13") },
+    { img: avatar, title: t("donate.name14") },
+  ];
 
   return (
     <div className={styles.donatePage}>
@@ -31,11 +34,8 @@ function DonatePage() {
         <div className={styles.content}>
           <div className={styles.topContent}>
             <div className={styles.titleWrapper}>
-              <h2>Поддержи идею</h2>
-              <p>
-                Orzu 3.0 x AVO — это история о заботе, технологиях и детской
-                вере, которая способна изменить реальность.
-              </p>
+              <h2>{t("donate.title")}</h2>
+              <p>{t("donate.desc")}</p>
             </div>
             <div className={styles.buttonWrapper}>
               <Flex
@@ -54,7 +54,7 @@ function DonatePage() {
                   textColor="white"
                   borderRadius={66}
                 >
-                  Имя
+                  {t("donate.nameBtn")}
                 </CustomButton>
                 <CustomButton
                   fontSize={isDesktop ? 32 : isMobile ? 24 : 50}
@@ -64,7 +64,7 @@ function DonatePage() {
                   width={isMobile ? "100%" : "28%"}
                   borderRadius={66}
                 >
-                  Анонимно
+                  {t("donate.anonimBtn")}
                 </CustomButton>
               </Flex>
               <CustomButton
@@ -78,13 +78,13 @@ function DonatePage() {
                 width={"100%"}
                 borderRadius={66}
               >
-                Поддержать
+                {t("donate.supportBtn")}
               </CustomButton>
             </div>
           </div>
 
           <div className={styles.bottomBlock}>
-            <h3>Список донаторов</h3>
+            <h3> {t("donate.subtitle")}</h3>
             <div className={styles.cards}>
               {kidsData.map((kid, index) => (
                 <div key={index} className={styles.card}>

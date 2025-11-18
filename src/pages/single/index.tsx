@@ -6,9 +6,11 @@ import modern from "src/assets/img/modern.png";
 import { I3Dcube } from "iconsax-react";
 import IdeaSupport from "../home/sections/idea-support";
 import { useScreenSize } from "src/utils/useWindowSize";
+import { useTranslation } from "react-i18next";
 
 function SinglePage() {
   const isMobile = useScreenSize(650);
+  const { t } = useTranslation();
 
   return (
     <div className={styles.single}>
@@ -17,11 +19,8 @@ function SinglePage() {
           <Flex className={styles.topContent} gap={16}>
             <div className={styles.userCard}>
               <img src={cardimg} alt="card-img" />
-              <h3>Шавкатова Севнора</h3>
-              <p>
-                Ангел‑хранитель – женский образ в белом платье, с большими
-                крыльями; длинные чёрные волосы; хрустальный шар.
-              </p>
+              <h3>{t("single.topTitle")}</h3>
+              <p>{t("single.topdesc")}</p>
             </div>
 
             <iframe
@@ -49,15 +48,12 @@ function SinglePage() {
               >
                 <div>
                   <h3>Defne</h3>
-                  <p>
-                    Ангел‑хранитель – женский образ в белом платье, с большими
-                    крыльями; длинные чёрные волосы; хрустальный шар.
-                  </p>
+                  <p>{t("single.bottomLeftDesc")}</p>
                 </div>
-                <h5>Скульптура для выставки</h5>
+                <h5>{t("single.sculptureExhibit")}</h5>
               </div>
               <img src={img} alt="" />
-              <h6>Скульптура для выставки</h6>
+              <h6>{t("single.sculptureExhibit")}</h6>
 
               {isMobile ? "" : <I3Dcube size="32" color="black" />}
             </Flex>
