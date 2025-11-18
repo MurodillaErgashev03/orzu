@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import styles from "./partners.module.scss";
 import img1 from "src/assets/img/partners1.png";
 import img2 from "src/assets/img/partners2.png";
@@ -7,21 +8,16 @@ import img5 from "src/assets/img/partners5.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 function Partners() {
+  const { t } = useTranslation();
   return (
     <div className={styles.partners}>
       <div className="container">
         <div className={styles.titleContent}>
-          <h3>ПАРТНЁРЫ</h3>
-          <p>
-            Этот проект стал возможен благодаря тем, кто верит в силу искусства,
-            технологии и важность инклюзии.
-          </p>
+          <h3>{t("home.partners.title")}</h3>
+          <p>{t("home.partners.desc1")}</p>
         </div>
         <div className={styles.backImgWrapper}>
-          <p>
-            AVObank — главный партнёр проекта, обеспечивший его реализацию и
-            поддержку на каждом этапе.
-          </p>
+          <p>{t("home.partners.desc2")}</p>
         </div>
 
         <Swiper

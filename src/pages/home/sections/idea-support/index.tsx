@@ -3,6 +3,7 @@ import styles from "./idea-support.module.scss";
 import avatar from "src/assets/img/avatar.png";
 import { useScreenSize } from "src/utils/useWindowSize";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface Donator {
   id: number;
@@ -15,6 +16,53 @@ interface Donator {
 function IdeaSupport() {
   const isMobile = useScreenSize(1200);
   const isMobileTitle = useScreenSize(786);
+  const { t } = useTranslation();
+
+  const donators: Donator[] = [
+    {
+      id: 1,
+      name: t("home.ideaSupport.donators.d1.name"),
+      initials: t("home.ideaSupport.donators.d1.initials"),
+      quote: t("home.ideaSupport.donators.d1.quote"),
+      avatarUrl: avatar,
+    },
+    {
+      id: 2,
+      name: t("home.ideaSupport.donators.d2.name"),
+      initials: t("home.ideaSupport.donators.d2.initials"),
+      quote: t("home.ideaSupport.donators.d2.quote"),
+      avatarUrl: avatar,
+    },
+    {
+      id: 3,
+      name: t("home.ideaSupport.donators.d3.name"),
+      initials: t("home.ideaSupport.donators.d3.initials"),
+      quote: t("home.ideaSupport.donators.d3.quote"),
+      avatarUrl: avatar,
+    },
+    {
+      id: 4,
+      name: t("home.ideaSupport.donators.d4.name"),
+      initials: t("home.ideaSupport.donators.d4.initials"),
+      quote: t("home.ideaSupport.donators.d4.quote"),
+      avatarUrl: avatar,
+    },
+    {
+      id: 5,
+      name: t("home.ideaSupport.donators.d5.name"),
+      initials: t("home.ideaSupport.donators.d5.initials"),
+      quote: t("home.ideaSupport.donators.d5.quote"),
+      avatarUrl: avatar,
+    },
+    {
+      id: 6,
+      name: t("home.ideaSupport.donators.d6.name"),
+      initials: t("home.ideaSupport.donators.d6.initials"),
+      quote: t("home.ideaSupport.donators.d6.quote"),
+      avatarUrl: avatar,
+    },
+  ];
+  const infiniteDonators = [...donators, ...donators, ...donators, ...donators];
 
   const navigate = useNavigate();
 
@@ -27,7 +75,7 @@ function IdeaSupport() {
       <div className="container">
         <div className={styles.content}>
           <div className={styles.leftBlock}>
-            <h2 className={styles.title}>ПОДДЕРЖИ ИДЕЮ</h2>
+            <h2 className={styles.title}>{t("home.ideaSupport.title")}</h2>
             <CustomButton
               style={{
                 height: 100,
@@ -38,7 +86,7 @@ function IdeaSupport() {
               fontSize={50}
               bg="#FAFF00"
             >
-              Поддержать
+              {t("home.ideaSupport.button")}
             </CustomButton>
           </div>
           <div className={styles.rightBlock}>
@@ -48,7 +96,7 @@ function IdeaSupport() {
                 display: isMobileTitle ? "none" : "flex",
               }}
             >
-              <h3>Список донаторов</h3>
+              <h3>{t("home.ideaSupport.donorsList")}</h3>
               <CustomButton
                 borderColor="white"
                 textColor="white"
@@ -59,7 +107,7 @@ function IdeaSupport() {
                   cursor: "pointer",
                 }}
               >
-                открыть
+                {t("home.ideaSupport.donorsListOpen")}
               </CustomButton>
             </div>
 
@@ -102,7 +150,7 @@ function IdeaSupport() {
                 }}
                 onClick={handleClick}
               >
-                Список донаторов
+                {t("home.ideaSupport.donorsList")}
               </h3>
             </div>
 
@@ -117,7 +165,7 @@ function IdeaSupport() {
               fontSize={24}
               bg="#FAFF00"
             >
-              Поддержать
+              {t("home.ideaSupport.button")}
             </CustomButton>
           </div>
         </div>
@@ -128,49 +176,4 @@ function IdeaSupport() {
 
 export default IdeaSupport;
 
-const donators: Donator[] = [
-  {
-    id: 1,
-    name: "ДАНИИЛ Р.",
-    initials: "ДР",
-    quote: "“Горжусь быть частью этого пути”",
-    avatarUrl: avatar,
-  },
-  {
-    id: 2,
-    name: "ДАНИИЛ Р.",
-    initials: "ДР",
-    quote: "“Горжусь быть частью этого пути”",
-    avatarUrl: avatar,
-  },
-  {
-    id: 3,
-    name: "НУР М.",
-    initials: "НМ",
-    quote: "“Горжусь быть частью этого пути”",
-    avatarUrl: avatar,
-  },
-  {
-    id: 4,
-    name: "АЛИШЕР Т.",
-    initials: "АТ",
-    quote: "“Rahmat, ajoyib loyiha!”",
-    avatarUrl: avatar,
-  },
-  {
-    id: 5,
-    name: "ЕЛЕНА С.",
-    initials: "ЕС",
-    quote: "“Men ham qo'llab-quvvatlayman.”",
-    avatarUrl: avatar,
-  },
-  {
-    id: 6,
-    name: "САИД К.",
-    initials: "СК",
-    quote: "“Omad tilayman!”",
-    avatarUrl: avatar,
-  },
-];
-
-const infiniteDonators = [...donators, ...donators, ...donators, ...donators];
+//

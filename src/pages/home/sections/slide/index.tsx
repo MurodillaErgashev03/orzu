@@ -2,8 +2,47 @@ import { useEffect, useState } from "react";
 import styles from "./home-slide.module.scss";
 import img1 from "src/assets/img/slide1.png";
 import img2 from "src/assets/img/slide2.png";
+import img3 from "src/assets/img/slide3.png";
+import img4 from "src/assets/img/slide4.png";
+import { useTranslation } from "react-i18next";
 
 function HomeSlide() {
+  const { t } = useTranslation();
+  const STEPS_DATA = [
+    {
+      step: 1,
+      title: "МЕЧТЫ ОБРЕТАЮТ ФОРМУ",
+      subtitle: t("home.homeSlide.subTitle1"),
+      body: t("home.homeSlide.description1"),
+      bgColor: "bg-blue-600",
+      imageUrl: img1,
+    },
+    {
+      step: 2,
+      title: "ГЕНЕРАЦИЯ ОПИСАНИЙ",
+      subtitle: t("home.homeSlide.subTitle2"),
+      body: t("home.homeSlide.description2"),
+      bgColor: "bg-indigo-600",
+      imageUrl: img2,
+    },
+    {
+      step: 3,
+      title: "ВОПЛОЩЕНИЕ ОБРАЗОВ",
+      subtitle: t("home.homeSlide.subTitle3"),
+      body: t("home.homeSlide.description3"),
+      bgColor: "bg-purple-600",
+      imageUrl: img3,
+    },
+    {
+      step: 4,
+      title: "СБОРНИК ГЕРОЕВ",
+      subtitle: t("home.homeSlide.subTitle4"),
+      body: t("home.homeSlide.description4"),
+      bgColor: "bg-pink-600",
+      imageUrl: img4,
+    },
+  ];
+
   const [currentStep, setCurrentStep] = useState(1);
   const currentData = STEPS_DATA.find((data) => data.step === currentStep);
   const AUTO_ADVANCE_DELAY = 3000;
@@ -29,7 +68,7 @@ function HomeSlide() {
       <div className="container">
         <div className={styles.appContainer}>
           <div className={`${styles.leftPanel}`}>
-            <h3>мечты обретают форму</h3>
+            <h3>{t("home.homeSlide.cardTitle")}</h3>
             <div>
               <h5 className={styles.subtitle}>{currentData.subtitle}</h5>
               <p className={styles.text}>{currentData.body}</p>
@@ -42,7 +81,7 @@ function HomeSlide() {
                   className={`${styles.stepItem} ${currentStep === step.step ? styles.active : ""}`}
                   onClick={() => handleStepClick(step.step)}
                 >
-                  Шаг {step.step}
+                  {t("home.homeSlide.step")} {step.step}
                 </div>
               ))}
             </div>
@@ -62,38 +101,3 @@ function HomeSlide() {
 }
 
 export default HomeSlide;
-
-const STEPS_DATA = [
-  {
-    step: 1,
-    title: "МЕЧТЫ ОБРЕТАЮТ ФОРМУ", // DREAMS TAKE FORM
-    subtitle: "Интервью с детьми", // Interview with children
-    body: "We talked to kids and asked them to tell us about their heroes — who they are, what powers they have, and what they look like. From these stories, we created magical descriptions that became the foundation of our prompts.",
-    bgColor: "bg-blue-600",
-    imageUrl: img1,
-  },
-  {
-    step: 2,
-    title: "ГЕНЕРАЦИЯ ОПИСАНИЙ", // DESCRIPTION GENERATION
-    subtitle: "Создание волшебного", // Creating the magical prompt
-    body: "We translated the children's imaginative tales into precise, structured prompts, focusing on cinematic lighting, vibrant colors, and thematic details to guide the AI generation process effectively.",
-    bgColor: "bg-indigo-600",
-    imageUrl: img2,
-  },
-  {
-    step: 3,
-    title: "ВОПЛОЩЕНИЕ ОБРАЗОВ", // IMAGE EMBODIMENT
-    subtitle: "Первая визуализация", // First visualization
-    body: "The prompts were fed into the AI generator, which produced the initial hero concepts. We reviewed these first drafts for fidelity to the child's original vision, making necessary revisions.",
-    bgColor: "bg-purple-600",
-    imageUrl: img1,
-  },
-  {
-    step: 4,
-    title: "СБОРНИК ГЕРОЕВ", // HERO COLLECTION
-    subtitle: "Завершение истории", // Completing the story
-    body: "The final polished artwork is presented alongside the original child interview and prompt, completing the journey from a dream to a fully realized visual hero and published story.",
-    bgColor: "bg-pink-600",
-    imageUrl: img2,
-  },
-];

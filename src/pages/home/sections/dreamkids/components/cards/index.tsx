@@ -1,5 +1,6 @@
 import { CustomButton } from "src/components/common";
 import styles from "./kids-cards.module.scss";
+import { useTranslation } from "react-i18next";
 
 interface IKidsCardProps {
   avatar: string;
@@ -20,6 +21,7 @@ function KidsCards({
   background,
   onClick,
 }: IKidsCardProps) {
+  const { t } = useTranslation();
   return (
     <div
       className={styles.kidsCards}
@@ -49,7 +51,7 @@ function KidsCards({
           bg="inherit"
           onClick={onClick}
         >
-          Подробнее
+          {t("home.dreamKids.card.button")}
         </CustomButton>
       </div>
     </div>

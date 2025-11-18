@@ -1,27 +1,25 @@
 import { Money, Star, User } from "src/assets/svg";
 import styles from "./year-review.module.scss";
+import { useTranslation } from "react-i18next";
 
 function YearReview() {
+  const { t } = useTranslation();
+
+  const cardData = [
+    { id: 1, icon: <Money />, text: t("home.yearReview.text1") },
+    { id: 2, icon: <Star />, text: t("home.yearReview.text2") },
+    { id: 3, icon: <User />, text: t("home.yearReview.text3") },
+  ];
   return (
     <div className={styles.yearReview}>
       <div className="container">
         <div className={styles.content}>
           <div className={styles.topBlock}>
             <div className={styles.textWrapper}>
-              <h2>КАК ЭТО БЫЛО В ПРОШЛОМ ГОДУ</h2>
+              <h2>{t("home.yearReview.title")}</h2>
               <div className={styles.descriptionWrapper}>
-                <p>
-                  Проект Orzu стартовал в прошлом году и вызвал широкий
-                  общественный отклик. Тогда слабовидящие дети описывали
-                  картины, которые художники создавали по их словам при помощи
-                  нейросетей. Каждая работа стала отражением их внутреннего мира
-                  — того, что они чувствуют и представляют.
-                </p>
-                <p>
-                  Затем прошла выставка и благотворительный аукцион. Все картины
-                  были проданы, а вырученные средства направлены на лечение и
-                  реабилитацию 15 детей с нарушением зрения.
-                </p>
+                <p>{t("home.yearReview.desc1")}</p>
+                <p>{t("home.yearReview.desc2")}</p>
               </div>
             </div>
             <iframe
@@ -53,9 +51,3 @@ function YearReview() {
 }
 
 export default YearReview;
-
-const cardData = [
-  { id: 1, icon: <Money />, text: "150+ млн сумов собрано" },
-  { id: 2, icon: <Star />, text: "20 картин продано" },
-  { id: 3, icon: <User />, text: "15 детей участвовало" },
-];

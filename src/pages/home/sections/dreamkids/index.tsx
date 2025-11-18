@@ -7,10 +7,63 @@ import KidsCards from "./components/cards";
 import styles from "./dreamkids.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useScreenSize } from "src/utils/useWindowSize";
+import { useTranslation } from "react-i18next";
 
 function DreamKids() {
   const navigate = useNavigate();
   const isMobile = useScreenSize(786);
+  const { t } = useTranslation();
+
+  const kidsData = [
+    {
+      background: "#4d90eb",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name1"),
+      img: img,
+      title: t("home.dreamKids.card.bigName1"),
+      description: t("home.dreamKids.card.description1"),
+    },
+    {
+      background: "#f5a623",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name2"),
+      img: img,
+      title: t("home.dreamKids.card.bigName2"),
+      description: t("home.dreamKids.card.description2"),
+    },
+    {
+      background: "#f44336",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name3"),
+      img: img,
+      title: t("home.dreamKids.card.bigName3"),
+      description: t("home.dreamKids.card.description3"),
+    },
+    {
+      background: "#50e3c2",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name4"),
+      img: img,
+      title: t("home.dreamKids.card.bigName4"),
+      description: t("home.dreamKids.card.description4"),
+    },
+    {
+      background: "#9013fe",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name5"),
+      img: img,
+      title: t("home.dreamKids.card.bigName5"),
+      description: t("home.dreamKids.card.description5"),
+    },
+    {
+      background: "#9013fe",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name6"),
+      img: img,
+      title: t("home.dreamKids.card.bigName6"),
+      description: t("home.dreamKids.card.description6"),
+    },
+  ];
 
   const handleClick = () => {
     navigate("/all-cards");
@@ -19,7 +72,7 @@ function DreamKids() {
     <div className={styles.dreamkids}>
       <div className="container">
         <div className={styles.contentTop}>
-          <h2 className={styles.title}>Дети, которые мечтают</h2>
+          <h2 className={styles.title}>{t("home.dreamKids.title")}</h2>
           <CustomButton
             style={{
               cursor: "pointer",
@@ -28,7 +81,7 @@ function DreamKids() {
             onClick={handleClick}
             borderColor={colors.black}
           >
-            Посмотреть все
+            {t("home.dreamKids.button")}
           </CustomButton>
         </div>
       </div>
@@ -97,7 +150,7 @@ function DreamKids() {
           onClick={handleClick}
           borderColor={colors.black}
         >
-          Посмотреть все
+          {t("home.dreamKids.button")}
         </CustomButton>
       </div>
     </div>
@@ -105,51 +158,3 @@ function DreamKids() {
 }
 
 export default DreamKids;
-
-const kidsData = [
-  {
-    background: "#4d90eb",
-    avatar: avatar,
-    name: "Комилжонов Саидкамол",
-    img: img,
-    title: "Aleksandr",
-    description:
-      "Похож на человека с голубоватой кожей. Крупные руки, длинные пальцы, густые брови. На голове чалма с золотым значком. Носит синий плащ. Усы длинные, закрученные вверх. Хвост как вихрь, вместо ног.",
-  },
-  {
-    background: "#f5a623",
-    avatar: avatar,
-    name: "Собирова Малика",
-    img: img,
-    title: "Luna",
-    description:
-      "Девочка с серебристыми волосами и светящимися глазами. Она управляет лунным светом и умеет делать ночное небо ярче. Всегда носит белое платье с блестками.",
-  },
-  {
-    background: "#f44336",
-    avatar: avatar,
-    name: "Рахимов Амир",
-    img: img,
-    title: "Blaze",
-    description:
-      "Мальчик, который управляет огнём. Его руки покрыты узорами, напоминающими пламя. На спине огненные крылья, а глаза светятся янтарным цветом.",
-  },
-  {
-    background: "#50e3c2",
-    avatar: avatar,
-    name: "Каримова Диана",
-    img: img,
-    title: "Aqua",
-    description:
-      "Живет в подводном мире. У неё голубые волосы, а кожа слегка переливается, как вода. Может вызывать дождь и говорить с морскими существами.",
-  },
-  {
-    background: "#9013fe",
-    avatar: avatar,
-    name: "Мирзаев Шерзод",
-    img: img,
-    title: "Volt",
-    description:
-      "Его тело излучает электричество. Он двигается со скоростью молнии и может заряжать всё вокруг. На его куртке всегда сверкает знак молнии.",
-  },
-];
