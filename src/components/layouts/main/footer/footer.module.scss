@@ -179,7 +179,7 @@
         #3c7cf5 50%,
         #3c7cf5 100%
       );
-      min-height: 400px;
+      // min-height: 400px;
     }
 
     .topContent .leftBg,
@@ -210,17 +210,18 @@
 
   @media (max-width: 650px) {
     .topContent {
-      min-height: 200px;
+      // min-height: 200px;
 
       .leftBg,
       .rightBg {
-        height: 100px;
+        // padding: 30px 50px;
+        // height: 100px;
       }
       .inner {
         gap: 0;
         .leftBlock {
-          padding: 10px 25px 10px 0;
-          height: 100px;
+          padding: 10px 25px 30px 0px;
+          // height: 100px;
 
           h3 {
             max-width: 220px;

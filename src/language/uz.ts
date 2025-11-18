@@ -36,6 +36,7 @@ export const languageUz = {
     dreamKids: {
       title: "ORZU QILADIGAN BOLALAR",
       button: "HAMMASINI KO‘RISH",
+      button1: "BATAFSIL",
 
       card: {
         name1: "Komiljonov Saidkamol",

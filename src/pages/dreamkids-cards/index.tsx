@@ -1,8 +1,9 @@
 import styles from "./dreamkids-cards.module.scss";
 import avatar from "src/assets/img/avatar.png";
 import { CustomButton } from "src/components/common";
-import cardImg from "src/assets/img/all-cardsimg.png";
+import img from "src/assets/img/all-cardsimg.png";
 import { useScreenSize } from "src/utils/useWindowSize";
+import { useTranslation } from "react-i18next";
 
 interface IKidsCardProps {
   avatar: string;
@@ -15,6 +16,59 @@ interface IKidsCardProps {
 }
 function KidsAllCards() {
   const isMobile = useScreenSize(500);
+
+  const { t } = useTranslation();
+
+  const kidsData = [
+    {
+      background: "#4d90eb",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name1"),
+      img: img,
+      title: t("home.dreamKids.card.bigName1"),
+      description: t("home.dreamKids.card.description1"),
+    },
+    {
+      background: "#f5a623",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name2"),
+      img: img,
+      title: t("home.dreamKids.card.bigName2"),
+      description: t("home.dreamKids.card.description2"),
+    },
+    {
+      background: "#f44336",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name3"),
+      img: img,
+      title: t("home.dreamKids.card.bigName3"),
+      description: t("home.dreamKids.card.description3"),
+    },
+    {
+      background: "#50e3c2",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name4"),
+      img: img,
+      title: t("home.dreamKids.card.bigName4"),
+      description: t("home.dreamKids.card.description4"),
+    },
+    {
+      background: "#9013fe",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name5"),
+      img: img,
+      title: t("home.dreamKids.card.bigName5"),
+      description: t("home.dreamKids.card.description5"),
+    },
+    {
+      background: "#13fe8cff",
+      avatar: avatar,
+      name: t("home.dreamKids.card.name6"),
+      img: img,
+      title: t("home.dreamKids.card.bigName6"),
+      description: t("home.dreamKids.card.description6"),
+    },
+  ];
 
   return (
     <div className={styles.kidsAllCards}>
@@ -47,13 +101,17 @@ function KidsAllCards() {
                     borderColor="#1454CD"
                     bg="inherit"
                   >
-                    Подробнее
+                    {t("home.dreamKids.button1")}
                   </CustomButton>
                 </div>
               </div>
 
-              <div className={styles.images}>
-                <img src={cardImg} alt={item.title} />
+              <div>
+                <img
+                  className={styles.images}
+                  src={item.img}
+                  alt={item.title}
+                />
               </div>
 
               {isMobile ? (
@@ -88,51 +146,3 @@ function KidsAllCards() {
 }
 
 export default KidsAllCards;
-
-const kidsData = [
-  {
-    background: "#4d90eb",
-    avatar: avatar,
-    name: "Комилжонов Саидкамол",
-    img: cardImg,
-    title: "Aleksandr",
-    description:
-      "Похож на человека с голубоватой кожей. Крупные руки, длинные пальцы, густые брови. На голове чалма с золотым значком. Носит синий плащ. Усы длинные, закрученные вверх. Хвост как вихрь, вместо ног.",
-  },
-  {
-    background: "#f5a623",
-    avatar: avatar,
-    name: "Собирова Малика",
-    img: cardImg,
-    title: "Luna",
-    description:
-      "Девочка с серебристыми волосами и светящимися глазами. Она управляет лунным светом и умеет делать ночное небо ярче. Всегда носит белое платье с блестками.",
-  },
-  {
-    background: "#f44336",
-    avatar: avatar,
-    name: "Рахимов Амир",
-    img: cardImg,
-    title: "Blaze",
-    description:
-      "Мальчик, который управляет огнём. Его руки покрыты узорами, напоминающими пламя. На спине огненные крылья, а глаза светятся янтарным цветом.",
-  },
-  {
-    background: "#50e3c2",
-    avatar: avatar,
-    name: "Каримова Диана",
-    img: cardImg,
-    title: "Aqua",
-    description:
-      "Живет в подводном мире. У неё голубые волосы, а кожа слегка переливается, как вода. Может вызывать дождь и говорить с морскими существами.",
-  },
-  {
-    background: "#9013fe",
-    avatar: avatar,
-    name: "Мирзаев Шерзод",
-    img: cardImg,
-    title: "Volt",
-    description:
-      "Его тело излучает электричество. Он двигается со скоростью молнии и может заряжать всё вокруг. На его куртке всегда сверкает знак молнии.",
-  },
-];

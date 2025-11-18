@@ -32,6 +32,7 @@ export const languageRu = {
     dreamKids: {
       title: "ДЕТИ, КОТОРЫЕ МЕЧТАЮТ",
       button: "ПОСМОТРЕТЬ ВСЕ",
+      button1: "ПОДРОБНЕЕ",
 
       card: {
         name1: "Комилжонов Саидкамол",

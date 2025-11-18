@@ -67,6 +67,9 @@
 
 @media screen and (max-width: 1200px) {
   .hero {
+    .titleBlock {
+      max-width: 100% !important;
+    }
     height: auto;
     .textWrapper {
       flex-direction: column !important;
@@ -85,6 +88,8 @@
       }
 
       .informationBlock {
+        text-align: left !important;
+        width: 100% !important;
         div {
           display: none !important;
         }

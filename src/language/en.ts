@@ -34,6 +34,7 @@ export const languageEn = {
     dreamKids: {
       title: "CHILDREN WHO DREAM",
       button: "VIEW ALL",
+      button1: "LEARN MORE",
 
       card: {
         name1: "Komiljonov Saidkamol",
